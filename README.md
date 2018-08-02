@@ -1,3 +1,3 @@
-# Boost
+# Boost & CUDA
 
-Basic Boost Tutorial
+Basic Boost & CUDA Tutorial
