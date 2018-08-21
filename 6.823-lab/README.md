@@ -1,5 +1,6 @@
 PIN  API文档查询：
 https://software.intel.com/sites/landingpage/pintool/docs/97619/Pin/html/group__PIN__CONTROL.html
+运行环境： pin 2.12; g++ 4.8.5
 
 6.823 的教学流程是先讲几个主要的体系结构概念　然后几个概念循环着深入讲
 
