@@ -22,12 +22,12 @@ for (int i = 0; i < nStreams; i++) {
    }
 ```
 
-![image][./multi-stream.png]
+![image](./multi-stream.png)
 
 
 Ｆｅｒｍｉ架构上的单队列中存在虚拟依赖关系,减弱了流之间的并行度
-![image][./single-Q.png]
+![image](./single-Q.png)
 
 Hyper-Q技术通过引入多队列解决的上述问题
-![image][./Hyper-Q.png]
+![image](./Hyper-Q.png)
 
