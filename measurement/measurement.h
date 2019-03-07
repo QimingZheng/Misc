@@ -44,7 +44,7 @@ double output_size(event<T,R> &Event){
 template<typename T, typename R>
 double total_size(event<T,R> *EventSeries, int len){
     double re = 0.0;
-   for (int iter = 0; iter<len; iter++){
+    for (int iter = 0; iter<len; iter++){
         re += (input_size(EventSeries[iter]) + output_size(EventSeries[iter]));
     }
     return re;
@@ -68,7 +68,7 @@ struct result throughput(event<T,R> *EventSeries, int len){
     for (int iter = 0; iter<len; iter++){
         re.mean += _throughput_[iter];
         re.max = max(re.max, _throughput_[iter]);
-        re.min = min(re.max, _throughput_[iter]);
+        re.min = min(re.min, _throughput_[iter]);
     }
     re.mean /= len;
     for (int iter = 0; iter<len; iter++){
@@ -96,7 +96,7 @@ struct result latency (event<T,R> *EventSeries, int len){
     for (int iter = 0; iter<len; iter++){
         re.mean += _latency_[iter];
         re.max = max(re.max, _latency_[iter]);
-        re.min = min(re.max, _latency_[iter]);
+        re.min = min(re.min, _latency_[iter]);
     }
     re.mean /= len;
     for (int iter = 0; iter<len; iter++){
