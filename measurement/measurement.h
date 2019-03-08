@@ -33,12 +33,12 @@ struct result{
 
 template<typename T, typename R>
 double input_size(event<T,R> &Event){
-    return sizeof(*(Event.input));
+    return Event.input->size();
 }
 
 template<typename T, typename R>
 double output_size(event<T,R> &Event){
-    return sizeof(*(Event.output));
+    return Event.output->size();
 }
 
 template<typename T, typename R>
@@ -137,7 +137,7 @@ void measurement_framework(void (*SystemHandler)(event<T, R> &), vector<T> &Inpu
     struct result throughput_re = throughput(EventSeries, len);
     struct result latency_re = latency(EventSeries, len);
     cout<<setw(20)<<left<<"statistic"<<setw(20)<<left<<"mean"<<setw(20)<<left<<"std"<<setw(20)<<left<<"min"<<setw(20)<< left<<"max"<<endl;
-    cout<<setw(20)<<left<<"Throughput"<<setw(20)<<left<< throughput_re.mean<<setw(20)<<left<<throughput_re.std<<setw(20)<<left
+    cout<<setw(20)<<left<<"Throughput[Bps]"<<setw(20)<<left<< throughput_re.mean<<setw(20)<<left<<throughput_re.std<<setw(20)<<left
     <<setw(20)<<left<<throughput_re.min<<setw(20)<<left<<throughput_re.max <<endl;
     cout<<setw(20)<<left<<"Latency"<<setw(20)<<left<< latency_re.mean<<setw(20)<<left<<latency_re.std<<setw(20)<<left
     <<setw(20)<<left<<latency_re.min<<setw(20)<<left<<latency_re.max <<endl;

@@ -2,10 +2,12 @@
 
 struct input_scratch{
     int in[100000];
+    int size(){return sizeof(int)*100000;}
 };
 
 struct output_scratch{
     int out[100000];
+    int size(){return sizeof(int)*100000;}
 };
 
 
